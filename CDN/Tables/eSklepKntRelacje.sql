@@ -1,0 +1,8 @@
+﻿CREATE TABLE [CDN].[eSklepKntRelacje] (
+    [ESK_ESKId]       INT IDENTITY (1, 1) NOT NULL,
+    [ESK_KntOptimaID] INT NOT NULL,
+    [ESK_KnteSklepID] INT NOT NULL,
+    [ESK_eSklepID]    INT NOT NULL,
+    CONSTRAINT [ESK_Primary] PRIMARY KEY CLUSTERED ([ESK_ESKId] ASC) WITH (FILLFACTOR = 100)
+);
+

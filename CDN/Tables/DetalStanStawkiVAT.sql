@@ -1,0 +1,9 @@
+﻿CREATE TABLE [CDN].[DetalStanStawkiVAT] (
+    [DSSVAT_DSSVATId]    INT            IDENTITY (1, 1) NOT NULL,
+    [DSSVAT_StanDetalID] INT            NOT NULL,
+    [DSSVAT_Stawka]      DECIMAL (5, 2) NOT NULL,
+    [DSSVAT_Flaga]       SMALLINT       NOT NULL,
+    [DSSVAT_DFSymbol]    NVARCHAR (40)  NOT NULL,
+    CONSTRAINT [DSSVAT_Primary] PRIMARY KEY CLUSTERED ([DSSVAT_DSSVATId] ASC) WITH (FILLFACTOR = 100)
+);
+

@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [CDNBackup]
+    WITH PASSWORD = N'pk|nvva#n@it%tzW|qhxrvGmmsFT7_&#$!~<lxLC0xpnkfbj', SID = 0x98535773EB56B047927DD827FB66C1C0;
+

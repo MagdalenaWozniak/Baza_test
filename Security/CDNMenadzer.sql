@@ -1,0 +1,3 @@
+﻿CREATE USER [CDNMenadzer] FOR LOGIN [CDNMenadzer]
+    WITH DEFAULT_SCHEMA = [CDNMenadzer];
+

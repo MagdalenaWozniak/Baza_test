@@ -1,0 +1,18 @@
+﻿CREATE TABLE [CDN].[OAtrybutyKlasyElem] (
+    [AKE_AkeId]   INT            IDENTITY (1, 1) NOT NULL,
+    [AKE_AtkId]   INT            NOT NULL,
+    [AKE_Wartosc] NVARCHAR (101) NOT NULL,
+    CONSTRAINT [AKE_Primary] PRIMARY KEY CLUSTERED ([AKE_AkeId] ASC) WITH (FILLFACTOR = 100),
+    CONSTRAINT [FK_AKEAtkId] FOREIGN KEY ([AKE_AtkId]) REFERENCES [CDN].[OAtrybutyKlasy] ([ATK_AtkId]) ON DELETE CASCADE
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [AKEAtkId]
+    ON [CDN].[OAtrybutyKlasyElem]([AKE_AtkId] ASC) WITH (FILLFACTOR = 100);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [AKEWartosc]
+    ON [CDN].[OAtrybutyKlasyElem]([AKE_AtkId] ASC, [AKE_Wartosc] ASC) WITH (FILLFACTOR = 100);
+

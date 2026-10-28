@@ -1,0 +1,8 @@
+﻿CREATE PROCEDURE [CDN].[DetalStan_UsunElementyDokumentu]
+@DocumentId int
+AS
+BEGIN
+SET NOCOUNT ON
+DELETE FROM CDN.DetalStanTraElem WHERE DSTrE_DSTrNId = @DocumentId
+SET NOCOUNT OFF
+END

@@ -1,0 +1,14 @@
+﻿CREATE TABLE [CDN].[Progi] (
+    [PRG_PrgId]   INT             IDENTITY (1, 1) NOT NULL,
+    [PRG_PreId]   INT             NOT NULL,
+    [PRG_Kwota]   DECIMAL (15, 2) NOT NULL,
+    [PRG_Procent] DECIMAL (15, 2) NOT NULL,
+    CONSTRAINT [PRG_Primary] PRIMARY KEY CLUSTERED ([PRG_PrgId] ASC, [PRG_Kwota] ASC) WITH (FILLFACTOR = 100),
+    CONSTRAINT [FK_PRGPreLink] FOREIGN KEY ([PRG_PreId]) REFERENCES [CDN].[PracEtaty] ([PRE_PreId]) ON DELETE CASCADE
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [PRGPreLink]
+    ON [CDN].[Progi]([PRG_PreId] ASC) WITH (FILLFACTOR = 100);
+

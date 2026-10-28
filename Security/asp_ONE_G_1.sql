@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [asp\ONE_G]
+    AUTHORIZATION [asp\ONE_G];
+

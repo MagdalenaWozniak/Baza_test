@@ -1,0 +1,52 @@
+﻿CREATE TABLE [CDN].[TraSElemCechy] (
+    [TsC_TsCID]           INT            IDENTITY (1, 1) NOT NULL,
+    [TsC_TrSID]           INT            NOT NULL,
+    [TsC_Cecha1_DeAId]    INT            NOT NULL,
+    [TsC_Cecha1_Format]   SMALLINT       NOT NULL,
+    [TsC_Cecha1_Kod]      VARCHAR (20)   NOT NULL,
+    [TsC_Cecha1_Wartosc]  NVARCHAR (255) NOT NULL,
+    [TsC_Cecha2_DeAId]    INT            NOT NULL,
+    [TsC_Cecha2_Format]   SMALLINT       NOT NULL,
+    [TsC_Cecha2_Kod]      VARCHAR (20)   NOT NULL,
+    [TsC_Cecha2_Wartosc]  NVARCHAR (255) NOT NULL,
+    [TsC_Cecha3_DeAId]    INT            NOT NULL,
+    [TsC_Cecha3_Format]   SMALLINT       NOT NULL,
+    [TsC_Cecha3_Kod]      VARCHAR (20)   NOT NULL,
+    [TsC_Cecha3_Wartosc]  NVARCHAR (255) NOT NULL,
+    [TsC_Cecha4_DeAId]    INT            NOT NULL,
+    [TsC_Cecha4_Format]   SMALLINT       NOT NULL,
+    [TsC_Cecha4_Kod]      VARCHAR (20)   NOT NULL,
+    [TsC_Cecha4_Wartosc]  NVARCHAR (255) NOT NULL,
+    [TsC_Cecha5_DeAId]    INT            NOT NULL,
+    [TsC_Cecha5_Format]   SMALLINT       NOT NULL,
+    [TsC_Cecha5_Kod]      VARCHAR (20)   NOT NULL,
+    [TsC_Cecha5_Wartosc]  NVARCHAR (255) NOT NULL,
+    [TsC_Cecha6_DeAId]    INT            NOT NULL,
+    [TsC_Cecha6_Format]   SMALLINT       NOT NULL,
+    [TsC_Cecha6_Kod]      VARCHAR (20)   NOT NULL,
+    [TsC_Cecha6_Wartosc]  NVARCHAR (255) NOT NULL,
+    [TsC_Cecha7_DeAId]    INT            NOT NULL,
+    [TsC_Cecha7_Format]   SMALLINT       NOT NULL,
+    [TsC_Cecha7_Kod]      VARCHAR (20)   NOT NULL,
+    [TsC_Cecha7_Wartosc]  NVARCHAR (255) NOT NULL,
+    [TsC_Cecha8_DeAId]    INT            NOT NULL,
+    [TsC_Cecha8_Format]   SMALLINT       NOT NULL,
+    [TsC_Cecha8_Kod]      VARCHAR (20)   NOT NULL,
+    [TsC_Cecha8_Wartosc]  NVARCHAR (255) NOT NULL,
+    [TsC_Cecha9_DeAId]    INT            NOT NULL,
+    [TsC_Cecha9_Format]   SMALLINT       NOT NULL,
+    [TsC_Cecha9_Kod]      VARCHAR (20)   NOT NULL,
+    [TsC_Cecha9_Wartosc]  NVARCHAR (255) NOT NULL,
+    [TsC_Cecha10_DeAId]   INT            NOT NULL,
+    [TsC_Cecha10_Format]  SMALLINT       NOT NULL,
+    [TsC_Cecha10_Kod]     VARCHAR (20)   NOT NULL,
+    [TsC_Cecha10_Wartosc] NVARCHAR (255) NOT NULL,
+    CONSTRAINT [TsC_Primary] PRIMARY KEY CLUSTERED ([TsC_TsCID] ASC) WITH (FILLFACTOR = 100),
+    CONSTRAINT [FK_TrSTraElemC] FOREIGN KEY ([TsC_TrSID]) REFERENCES [CDN].[TraSElem] ([TrS_TrSID]) ON DELETE CASCADE
+);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [TrSTraElemC]
+    ON [CDN].[TraSElemCechy]([TsC_TrSID] ASC, [TsC_TsCID] ASC) WITH (FILLFACTOR = 100);
+

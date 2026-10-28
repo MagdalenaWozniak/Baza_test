@@ -1,0 +1,6 @@
+﻿CREATE TABLE [CDN].[RejestracjaZgodKategorie] (
+    [RZK_RZKID] INT            IDENTITY (1, 1) NOT NULL,
+    [RZK_Nazwa] NVARCHAR (255) NOT NULL,
+    CONSTRAINT [RZK_Primary] PRIMARY KEY CLUSTERED ([RZK_RZKID] ASC) WITH (FILLFACTOR = 100)
+);
+

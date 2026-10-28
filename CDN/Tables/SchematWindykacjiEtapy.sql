@@ -1,0 +1,27 @@
+﻿CREATE TABLE [CDN].[SchematWindykacjiEtapy] (
+    [SwE_SwEId]                   INT             IDENTITY (1, 1) NOT NULL,
+    [SwE_SwNId]                   INT             NOT NULL,
+    [SwE_Typ]                     TINYINT         NOT NULL,
+    [SwE_Kod]                     NVARCHAR (20)   NOT NULL,
+    [SwE_Nazwa]                   NVARCHAR (250)  NOT NULL,
+    [SwE_Termin]                  INT             NOT NULL,
+    [SwE_EmailSzablonId]          INT             NULL,
+    [SwE_CrmZadanie]              TINYINT         NOT NULL,
+    [SwE_CrmTemat]                NVARCHAR (255)  NOT NULL,
+    [SwE_PonZapKosztyDod]         DECIMAL (15, 2) NOT NULL,
+    [SwE_PonZapGenerujPlatnosc]   TINYINT         NOT NULL,
+    [SwE_PonZapFormaPlatnosciId]  INT             NULL,
+    [SwE_PonZapTerminPlatDni]     INT             NOT NULL,
+    [SwE_PonZapEmail]             INT             NOT NULL,
+    [SwE_PonZapTytulWydruku]      INT             NOT NULL,
+    [SwE_DdfId]                   INT             NULL,
+    [SwE_DataDok]                 DATETIME        NULL,
+    [SwE_TypDokumentu]            INT             NULL,
+    [SwE_NumerString]             VARCHAR (31)    NOT NULL,
+    [SwE_NumerNr]                 INT             NOT NULL,
+    [SwE_PonZapWydrukId]          INT             CONSTRAINT [DF_SwE_PonZapWydrukId] DEFAULT ((1815)) NOT NULL,
+    [SwE_PonZapWydrukStandardowy] TINYINT         CONSTRAINT [DF_SwE_PonZapWydrukStandardowy] DEFAULT ((1)) NOT NULL,
+    CONSTRAINT [SwE_Primary] PRIMARY KEY CLUSTERED ([SwE_SwEId] ASC) WITH (FILLFACTOR = 100),
+    CONSTRAINT [FK_SwE_SwN] FOREIGN KEY ([SwE_SwNId]) REFERENCES [CDN].[SchematyWindykacji] ([SwN_SwNId]) ON DELETE CASCADE
+);
+

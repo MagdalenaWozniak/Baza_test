@@ -1,0 +1,15 @@
+﻿CREATE TABLE [CDN].[CentraLink] (
+    [CNL_CntId]    INT NOT NULL,
+    [CNL_ParentId] INT NOT NULL
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [CNLCnt]
+    ON [CDN].[CentraLink]([CNL_CntId] ASC) WITH (FILLFACTOR = 100);
+
+
+GO
+CREATE NONCLUSTERED INDEX [CNLParent]
+    ON [CDN].[CentraLink]([CNL_CntId] ASC, [CNL_ParentId] ASC) WITH (FILLFACTOR = 100);
+

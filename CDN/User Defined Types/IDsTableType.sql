@@ -1,0 +1,3 @@
+﻿CREATE TYPE [CDN].[IDsTableType] AS TABLE (
+    [ID] INT NULL);
+

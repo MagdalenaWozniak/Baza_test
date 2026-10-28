@@ -1,0 +1,16 @@
+﻿CREATE TABLE [CDN].[Akordy] (
+    [AKR_AkrId]      INT           IDENTITY (1, 1) NOT NULL,
+    [AKR_PraId]      INT           NOT NULL,
+    [AKR_Nazwa]      NVARCHAR (40) NOT NULL,
+    [AKR_WaznyOd]    DATETIME      NOT NULL,
+    [AKR_WaznyDo]    DATETIME      NOT NULL,
+    [AKR_Nieaktywny] TINYINT       CONSTRAINT [DF_AKR_Nieaktywny] DEFAULT ((0)) NOT NULL,
+    CONSTRAINT [AKR_Primary] PRIMARY KEY CLUSTERED ([AKR_AkrId] ASC) WITH (FILLFACTOR = 100),
+    CONSTRAINT [FK_AKRPraLink] FOREIGN KEY ([AKR_PraId]) REFERENCES [CDN].[PracKod] ([PRA_PraId]) ON DELETE CASCADE
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [AKRPraLink]
+    ON [CDN].[Akordy]([AKR_PraId] ASC) WITH (FILLFACTOR = 100);
+

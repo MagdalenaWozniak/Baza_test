@@ -1,0 +1,2 @@
+﻿CREATE USER [asp\ONE_G];
+

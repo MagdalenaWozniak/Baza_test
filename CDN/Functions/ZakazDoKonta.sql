@@ -1,0 +1,9 @@
+﻿CREATE FUNCTION CDN.ZakazDoKonta (@AccId INT, @OpeId INT)
+RETURNS INT
+AS
+BEGIN
+ DECLARE @Wynik INT
+ SET @Wynik = 0
+ IF EXISTS (SELECT * FROM CDN.KontaZakazy WHERE AcZ_OpeId = @OpeId AND AcZ_AccId = @AccId) SET @Wynik = 1
+ RETURN @Wynik
+END

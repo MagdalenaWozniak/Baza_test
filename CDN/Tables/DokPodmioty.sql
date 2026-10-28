@@ -1,0 +1,13 @@
+﻿CREATE TABLE [CDN].[DokPodmioty] (
+    [DoP_DoPId]      INT IDENTITY (1, 1) NOT NULL,
+    [DoP_PodmiotTyp] INT NULL,
+    [DoP_PodmiotID]  INT NULL,
+    [DoP_DoNID]      INT NULL,
+    CONSTRAINT [DoP_Primary] PRIMARY KEY CLUSTERED ([DoP_DoPId] ASC) WITH (FILLFACTOR = 100)
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [DoPDokNag]
+    ON [CDN].[DokPodmioty]([DoP_DoNID] ASC) WITH (FILLFACTOR = 100);
+

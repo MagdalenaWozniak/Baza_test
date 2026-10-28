@@ -1,0 +1,25 @@
+﻿CREATE TABLE [CDN].[DPD] (
+    [DPD_DPDID]             INT             IDENTITY (1, 1) NOT NULL,
+    [DPD_DokumentTyp]       INT             NOT NULL,
+    [DPD_DokumentID]        INT             NOT NULL,
+    [DPD_SumaKwotZdarzen]   DECIMAL (15, 2) NULL,
+    [DPD_SumaKwotRozliczen] DECIMAL (15, 2) NULL,
+    [DPD_Numer]             VARCHAR (30)    NULL,
+    [DPD_Data]              DATETIME        NULL,
+    [DPD_Kwota]             DECIMAL (15, 2) NULL,
+    [DPD_Opis]              VARCHAR (50)    NULL,
+    [DPD_KPRId]             INT             NULL,
+    [DPD_DekId]             INT             NULL,
+    [DPD_Rozliczono]        INT             NOT NULL,
+    [DPD_DataKur]           DATETIME        NULL,
+    [DPD_Waluta]            VARCHAR (3)     NULL,
+    [DPD_KursL]             DECIMAL (15, 4) NULL,
+    [DPD_KursM]             DECIMAL (5)     NULL,
+    [DPD_KursNumer]         INT             NULL,
+    [DPD_DataWys]           DATETIME        NULL,
+    [DPD_Termin]            DATETIME        NULL,
+    [DPD_Skreslony]         INT             NOT NULL,
+    [DPD_DataKorekty]       DATETIME        NULL,
+    CONSTRAINT [DPD_Primary] PRIMARY KEY CLUSTERED ([DPD_DPDID] ASC) WITH (FILLFACTOR = 100)
+);
+

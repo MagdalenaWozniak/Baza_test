@@ -1,0 +1,7 @@
+﻿CREATE ROLE [CDNRaport]
+    AUTHORIZATION [dbo];
+
+
+GO
+ALTER ROLE [CDNRaport] ADD MEMBER [CDNGosc];
+

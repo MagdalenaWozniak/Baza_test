@@ -1,0 +1,9 @@
+﻿CREATE FUNCTION CDN.EcodCenaPrzedKorekta(@TrEId AS INT)
+RETURNS DECIMAL(15,2)
+AS
+BEGIN
+ DECLARE @Wynik DECIMAL(15,2)
+ SET @Wynik = 0.00
+ SELECT TOP 1 @Wynik = IsNull(CenaTOrg, 0.00)   FROM CDN.TraElemKorektaForEcod(@TrEId)
+ RETURN @Wynik
+END

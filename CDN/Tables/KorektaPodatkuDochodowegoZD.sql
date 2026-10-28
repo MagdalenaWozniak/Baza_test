@@ -1,0 +1,25 @@
+﻿CREATE TABLE [CDN].[KorektaPodatkuDochodowegoZD] (
+    [KZD_KZDID]           INT             IDENTITY (1, 1) NOT NULL,
+    [KZD_NumerDokumentu]  NVARCHAR (256)  NOT NULL,
+    [KZD_Kontrahent]      NVARCHAR (352)  NOT NULL,
+    [KZD_NIP]             NVARCHAR (20)   NOT NULL,
+    [KZD_DataWystawienia] DATETIME        NOT NULL,
+    [KZD_TerminPlatnosci] DATETIME        NOT NULL,
+    [KZD_KwotaPlatnosci]  NUMERIC (15, 2) NOT NULL,
+    [KZD_RozliczonaKwota] NUMERIC (15, 2) NOT NULL,
+    [KZD_KwotaDoKorekty]  NUMERIC (15, 2) NOT NULL,
+    [KZD_Skorygowano]     NUMERIC (15, 2) NOT NULL,
+    [KZD_InfoDodatkowe]   NVARCHAR (MAX)  NOT NULL,
+    [KZD_DokumentID]      INT             NOT NULL,
+    [KZD_DokumentTyp]     INT             NOT NULL,
+    [KZD_BZdID]           INT             NOT NULL,
+    [KZD_KontrahentID]    INT             NOT NULL,
+    [KZD_Kierunek]        INT             NOT NULL,
+    [KZD_Rodzaj]          INT             NOT NULL,
+    [KZD_DkNID]           INT             NOT NULL,
+    [KZD_PraID]           INT             NULL,
+    [KZD_Pierwszy]        INT             NOT NULL,
+    CONSTRAINT [KZD_Primary] PRIMARY KEY CLUSTERED ([KZD_KZDID] ASC) WITH (FILLFACTOR = 100),
+    CONSTRAINT [FK_KZDDeklNag] FOREIGN KEY ([KZD_DkNID]) REFERENCES [CDN].[DeklNag] ([DkN_DkNID]) ON DELETE CASCADE
+);
+

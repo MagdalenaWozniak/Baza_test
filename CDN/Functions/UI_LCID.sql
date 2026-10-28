@@ -1,0 +1,17 @@
+﻿CREATE FUNCTION [CDN].[UI_LCID]()
+RETURNS INT
+BEGIN
+  DECLARE @LCID INT;
+  SET @LCID = 1045;
+  DECLARE @OpeLen INT;
+  SET @OpeLen = CAST (substring ( CONTEXT_INFO() , 5, 4) AS INT)
+  if @OpeLen = NULL
+   SET @OpeLen = 0
+ IF @OpeLen >0
+ BEGIN
+   SET @LCID = CAST (substring ( CONTEXT_INFO() , 9+2*@OpeLen, 4) AS INT)
+   if @LCID = NULL
+  SET @LCID = 1045;
+ END
+ RETURN @LCID
+END

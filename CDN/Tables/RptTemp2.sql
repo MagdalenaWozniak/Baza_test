@@ -1,0 +1,7 @@
+﻿CREATE TABLE [CDN].[RptTemp2] (
+    [RpT2_RpT2Id] INT      IDENTITY (1, 1) NOT NULL,
+    [RpT2_TmpId]  INT      NULL,
+    [RpT2_Data]   DATETIME NULL,
+    CONSTRAINT [RpT2_Primary] PRIMARY KEY CLUSTERED ([RpT2_RpT2Id] ASC) WITH (FILLFACTOR = 100)
+);
+

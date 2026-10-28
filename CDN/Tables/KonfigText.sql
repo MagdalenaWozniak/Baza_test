@@ -1,0 +1,6 @@
+﻿CREATE TABLE [CDN].[KonfigText] (
+    [KTx_Key]   NVARCHAR (49)  NOT NULL,
+    [KTx_Value] NVARCHAR (MAX) NULL,
+    CONSTRAINT [KTx_Primary] PRIMARY KEY CLUSTERED ([KTx_Key] ASC) WITH (FILLFACTOR = 100)
+);
+

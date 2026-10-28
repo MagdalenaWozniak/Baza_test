@@ -1,0 +1,15 @@
+﻿CREATE TABLE [CDN].[AkordProgres] (
+    [AKP_AkpId]  INT             IDENTITY (1, 1) NOT NULL,
+    [AKP_AdfId]  INT             NOT NULL,
+    [AKP_Ilosc]  DECIMAL (15, 4) NOT NULL,
+    [AKP_Stawka] DECIMAL (15, 4) NOT NULL,
+    [AKP_Czas]   DATETIME        NULL,
+    CONSTRAINT [AKP_Primary] PRIMARY KEY CLUSTERED ([AKP_AkpId] ASC) WITH (FILLFACTOR = 100),
+    CONSTRAINT [FK_AKPAdfLink] FOREIGN KEY ([AKP_AdfId]) REFERENCES [CDN].[AkordDefinicja] ([ADF_AdfId]) ON DELETE CASCADE
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [AKPAdfLink]
+    ON [CDN].[AkordProgres]([AKP_AdfId] ASC) WITH (FILLFACTOR = 100);
+

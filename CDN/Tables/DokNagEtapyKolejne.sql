@@ -1,0 +1,17 @@
+﻿CREATE TABLE [CDN].[DokNagEtapyKolejne] (
+    [DnEK_DnEkID]        INT IDENTITY (1, 1) NOT NULL,
+    [DnEK_DnPrID]        INT NULL,
+    [DnEK_DnPrIDKolejny] INT NULL,
+    CONSTRAINT [DnEK_Primary] PRIMARY KEY CLUSTERED ([DnEK_DnEkID] ASC) WITH (FILLFACTOR = 100)
+);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [DnEKEtap]
+    ON [CDN].[DokNagEtapyKolejne]([DnEK_DnPrID] ASC, [DnEK_DnEkID] ASC) WITH (FILLFACTOR = 100);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [DnEKKolejny]
+    ON [CDN].[DokNagEtapyKolejne]([DnEK_DnPrIDKolejny] ASC, [DnEK_DnEkID] ASC) WITH (FILLFACTOR = 100);
+

@@ -1,0 +1,8 @@
+﻿CREATE FUNCTION cdn.CapitalizeFirstChar(@text NVARCHAR(MAX))
+RETURNS NVARCHAR(MAX)
+BEGIN
+ IF @text IS NULL RETURN ''
+ IF LEN(RTRIM(LTRIM(@text))) = 0  RETURN ''
+ IF LEN(RTRIM(LTRIM(@text))) = 1  RETURN UPPER(LEFT(@text,1))
+ RETURN UPPER(LEFT(@text,1)) + LOWER(SUBSTRING(@text,2,LEN(@text)))
+END

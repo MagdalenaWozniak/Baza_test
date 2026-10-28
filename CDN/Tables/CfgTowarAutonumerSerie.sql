@@ -1,0 +1,13 @@
+﻿CREATE TABLE [CDN].[CfgTowarAutonumerSerie] (
+    [CTAS_CTASId]   INT           IDENTITY (1, 1) NOT NULL,
+    [CTAS_Nazwa]    NVARCHAR (19) NOT NULL,
+    [CTAS_Opis]     NVARCHAR (40) NOT NULL,
+    [CTAS_Domyslna] TINYINT       NOT NULL,
+    CONSTRAINT [CTAS_Primary] PRIMARY KEY CLUSTERED ([CTAS_CTASId] ASC) WITH (FILLFACTOR = 100)
+);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [CTAS_Nazwa_UniqueIx]
+    ON [CDN].[CfgTowarAutonumerSerie]([CTAS_Nazwa] ASC) WITH (FILLFACTOR = 100);
+

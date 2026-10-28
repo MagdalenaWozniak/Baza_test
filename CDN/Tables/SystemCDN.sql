@@ -1,0 +1,6 @@
+﻿CREATE TABLE [CDN].[SystemCDN] (
+    [SYS_ID]      INT           NOT NULL,
+    [SYS_Wartosc] VARCHAR (254) NOT NULL,
+    CONSTRAINT [SYS_Primary] PRIMARY KEY CLUSTERED ([SYS_ID] ASC) WITH (FILLFACTOR = 100)
+);
+

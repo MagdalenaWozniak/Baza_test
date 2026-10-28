@@ -1,0 +1,8 @@
+﻿CREATE FUNCTION CDN.KorektaPodatku_Usuniete(@BZd_BZdID INTEGER, @PraID INTEGER)
+RETURNS INTEGER
+AS
+BEGIN
+ DECLARE @Zakazany INTEGER
+ SELECT @Zakazany = COUNT(KZa_BZdID) FROM CDN.KorektaPodatkuDochodowegoZDZakazy WHERE KZa_BZdID = @BZd_BZdID AND ISNULL(KZa_PraID, 0) = ISNULL(@PraID, 0)
+ RETURN @Zakazany
+END

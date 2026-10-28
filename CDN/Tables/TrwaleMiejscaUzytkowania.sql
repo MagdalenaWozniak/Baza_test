@@ -1,0 +1,15 @@
+﻿CREATE TABLE [CDN].[TrwaleMiejscaUzytkowania] (
+    [SrMU_SrMUID] INT            IDENTITY (1, 1) NOT NULL,
+    [SrMU_SrTID]  INT            NOT NULL,
+    [SrMU_DataOd] DATETIME       NULL,
+    [SrMU_DataDo] DATETIME       NULL,
+    [SrMU_Nazwa]  NVARCHAR (255) NOT NULL,
+    CONSTRAINT [SrMUPrimary] PRIMARY KEY CLUSTERED ([SrMU_SrMUID] ASC) WITH (FILLFACTOR = 100),
+    CONSTRAINT [FK_SrMUSrT] FOREIGN KEY ([SrMU_SrTID]) REFERENCES [CDN].[Trwale] ([SrT_SrTID]) ON DELETE CASCADE
+);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [SrMUSrT]
+    ON [CDN].[TrwaleMiejscaUzytkowania]([SrMU_SrTID] ASC, [SrMU_DataOd] ASC) WITH (FILLFACTOR = 100);
+

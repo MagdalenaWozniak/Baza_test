@@ -1,0 +1,27 @@
+﻿CREATE TABLE [CDN].[AnkAnkietyPyt] (
+    [AnkAnP_AnkAnPId]           INT             IDENTITY (1, 1) NOT NULL,
+    [AnkAnP_AnkAnNId]           INT             NOT NULL,
+    [AnkAnP_Lp]                 INT             NOT NULL,
+    [AnkAnP_Tresc]              NVARCHAR (1024) NOT NULL,
+    [AnkAnP_Opis]               NVARCHAR (MAX)  NOT NULL,
+    [AnkAnP_TypPytania]         TINYINT         NOT NULL,
+    [AnkAnP_FormatPytOtwartego] TINYINT         NOT NULL,
+    [AnkAnP_WielokrotnyWybor]   TINYINT         NOT NULL,
+    [AnkAnP_AnkSoNId]           INT             NULL,
+    [AnkAnP_Waga]               INT             NOT NULL,
+    [AnkAnP_OdpWymagana]        TINYINT         NOT NULL,
+    [AnkAnP_Nieaktywne]         TINYINT         NOT NULL,
+    [AnkAnP_OdpowiedzWyb]       INT             NULL,
+    [AnkAnP_Odpowiedz]          NVARCHAR (MAX)  NULL,
+    [AnkAnP_WypelniajacyTyp]    SMALLINT        NOT NULL,
+    [AnkAnP_WypelniajacyId]     INT             NOT NULL,
+    [AnkAnP_AnkSpId]            INT             NULL,
+    [AnkAnP_AnkGpId]            INT             NOT NULL,
+    [AnkAnP_GpTreeId]           INT             NOT NULL,
+    [AnkAnP_GpParentId]         INT             NOT NULL,
+    [AnkAnP_GpParentLp]         INT             NOT NULL,
+    [AnkAnP_PunktyZaOdp]        DECIMAL (15, 2) NOT NULL,
+    CONSTRAINT [AnkAnP_Primary] PRIMARY KEY CLUSTERED ([AnkAnP_AnkAnPId] ASC) WITH (FILLFACTOR = 100),
+    CONSTRAINT [FK_AnkAnP_AnkAnN] FOREIGN KEY ([AnkAnP_AnkAnNId]) REFERENCES [CDN].[AnkAnkietyNag] ([AnkAnN_AnkAnNId]) ON DELETE CASCADE
+);
+

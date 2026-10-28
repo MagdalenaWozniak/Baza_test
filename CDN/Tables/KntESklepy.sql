@@ -1,0 +1,15 @@
+﻿CREATE TABLE [CDN].[KntESklepy] (
+    [KES_KESID]            INT      IDENTITY (1, 1) NOT NULL,
+    [KES_KntID]            INT      NOT NULL,
+    [KES_eSklepID]         INT      NOT NULL,
+    [KES_TypCenyDomyslnej] SMALLINT CONSTRAINT [DF_KES_TypCenyDomyslnej] DEFAULT ((0)) NOT NULL,
+    CONSTRAINT [KES_Primary] PRIMARY KEY CLUSTERED ([KES_KESID] ASC) WITH (FILLFACTOR = 100),
+    CONSTRAINT [FK_KESESS] FOREIGN KEY ([KES_eSklepID]) REFERENCES [CDN].[eSklepStanowiska] ([ESS_ESSId]),
+    CONSTRAINT [FK_KESKnt] FOREIGN KEY ([KES_KntID]) REFERENCES [CDN].[Kontrahenci] ([Knt_KntId])
+);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [KESKntESS]
+    ON [CDN].[KntESklepy]([KES_KntID] ASC, [KES_eSklepID] ASC) WITH (FILLFACTOR = 100);
+

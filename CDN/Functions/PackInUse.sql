@@ -1,0 +1,14 @@
+﻿CREATE FUNCTION CDN.PackInUse( @TrEId INT)
+RETURNS INT
+AS
+BEGIN
+ IF EXISTS( SELECT 1 FROM cdn.TraElem WHERE
+  TrE_TrEId=@TrEId
+  AND (
+      ( TrE_IloscJM > TrE_Ilosc AND (TrE_JMZ LIKE 'OPAK%' OR TrE_JMZ LIKE 'PACZ%' ) )
+  OR  ( TrE_IloscJM < TrE_Ilosc AND (TrE_JM LIKE 'OPAK%' OR TrE_JM LIKE 'PACZ%' ) )
+  )
+  )
+  RETURN 1
+ RETURN 0
+END

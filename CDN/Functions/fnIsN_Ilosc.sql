@@ -1,0 +1,8 @@
+﻿CREATE FUNCTION CDN.fnIsN_Ilosc ( @IsNId INT )
+RETURNS INT
+AS
+BEGIN
+ DECLARE @Wynik INT
+ SELECT @Wynik=COUNT(*) FROM CDN.IntrastatElem Where IsE_IsNId = @IsNId
+ RETURN @Wynik
+END

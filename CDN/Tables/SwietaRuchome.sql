@@ -1,0 +1,5 @@
+﻿CREATE TABLE [CDN].[SwietaRuchome] (
+    [SwR_Data] DATETIME NOT NULL,
+    CONSTRAINT [SwR_Primary] PRIMARY KEY CLUSTERED ([SwR_Data] ASC) WITH (FILLFACTOR = 100)
+);
+

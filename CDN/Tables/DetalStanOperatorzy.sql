@@ -1,0 +1,52 @@
+﻿CREATE TABLE [CDN].[DetalStanOperatorzy] (
+    [DSOpe_DSOpeID]                   INT             IDENTITY (1, 1) NOT NULL,
+    [DSOpe_StanDetalID]               INT             NOT NULL,
+    [DSOpe_OptimaId]                  INT             NOT NULL,
+    [DSOpe_Kod]                       VARCHAR (20)    NOT NULL,
+    [DSOpe_Nazwisko]                  NVARCHAR (50)   NOT NULL,
+    [DSOpe_KodDlaDF]                  NVARCHAR (10)   NOT NULL,
+    [DSOpe_Haslo]                     NVARCHAR (30)   NOT NULL,
+    [DSOpe_KontoDomenowe]             VARCHAR (100)   NULL,
+    [DSOpe_KontoDomenoweSID]          VARCHAR (200)   NULL,
+    [DSOpe_NTSid]                     VARCHAR (100)   NOT NULL,
+    [DSOpe_NTKonto]                   VARCHAR (40)    NOT NULL,
+    [DSOpe_NTLogin]                   TINYINT         NOT NULL,
+    [DSOpe_OpeNieAktywny]             TINYINT         NOT NULL,
+    [DSOpe_KodFunkcji]                NVARCHAR (20)   NOT NULL,
+    [DSOpe_ZmianaCenySprzedazy]       TINYINT         NOT NULL,
+    [DSOpe_PrawoDoRabatowPozycja]     TINYINT         NOT NULL,
+    [DSOpe_PrawoDoRabatowDokument]    TINYINT         NOT NULL,
+    [DSOpe_StornoOstatniejPozycji]    TINYINT         NOT NULL,
+    [DSOpe_StornoCalegoParagonu]      TINYINT         NOT NULL,
+    [DSOpe_WplataDoKasy]              TINYINT         NOT NULL,
+    [DSOpe_WyplataZKasy]              TINYINT         NOT NULL,
+    [DSOpe_ReczneOtwarcieSzuflady]    TINYINT         NOT NULL,
+    [DSOpe_RaportFiskalny]            TINYINT         NOT NULL,
+    [DSOpe_RaportOkresowy]            TINYINT         NOT NULL,
+    [DSOpe_PodgladStanuKasy]          TINYINT         NOT NULL,
+    [DSOpe_PlatnoscInnymiFormami]     TINYINT         NOT NULL,
+    [DSOpe_ZwrotTowaru]               TINYINT         NOT NULL,
+    [DSOpe_FakturaDoParagonu]         TINYINT         NOT NULL,
+    [DSOpe_PodgladDokWlasnych]        TINYINT         NOT NULL,
+    [DSOpe_PodgladDokWszystkich]      TINYINT         NOT NULL,
+    [DSOpe_KonfiguracjaProgramu]      TINYINT         NOT NULL,
+    [DSOpe_KonfiguracjaInterfejsu]    TINYINT         NOT NULL,
+    [DSOpe_OtwarcieZmiany]            TINYINT         NOT NULL,
+    [DSOpe_ZamkniecieZmiany]          TINYINT         NOT NULL,
+    [DSOpe_PrzekazanieParagonow]      TINYINT         NOT NULL,
+    [DSOpe_EdycjaParagonow]           TINYINT         NOT NULL,
+    [DSOpe_StanWszystkieMagazyny]     TINYINT         NOT NULL,
+    [DSOpe_NieokreslonyPlatOdroczona] TINYINT         NOT NULL,
+    [DSOpe_ZmianaJM]                  TINYINT         CONSTRAINT [DF_DSOpe_ZmianaJM] DEFAULT ((0)) NOT NULL,
+    [DSOpe_Karta]                     NVARCHAR (254)  NOT NULL,
+    [DSOpe_MaxRabat]                  DECIMAL (15, 2) CONSTRAINT [DF_DSOpe_MaxRabat] DEFAULT ((99.99)) NOT NULL,
+    [DSOpe_TS_Mod]                    DATETIME        NOT NULL,
+    [DSOpe_DataLogowania]             DATETIME        NOT NULL,
+    CONSTRAINT [DSOpe_Primary] PRIMARY KEY CLUSTERED ([DSOpe_DSOpeID] ASC) WITH (FILLFACTOR = 100)
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [DelalStanDSOpe_OptimaID]
+    ON [CDN].[DetalStanOperatorzy]([DSOpe_OptimaId] ASC) WITH (FILLFACTOR = 100);
+

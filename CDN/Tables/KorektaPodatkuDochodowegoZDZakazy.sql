@@ -1,0 +1,7 @@
+﻿CREATE TABLE [CDN].[KorektaPodatkuDochodowegoZDZakazy] (
+    [KZa_KZaID] INT IDENTITY (1, 1) NOT NULL,
+    [KZa_PraID] INT NULL,
+    [KZa_BZdID] INT NOT NULL,
+    CONSTRAINT [KZa_Primary] PRIMARY KEY CLUSTERED ([KZa_KZaID] ASC) WITH (FILLFACTOR = 100)
+);
+

@@ -1,0 +1,9 @@
+﻿CREATE PROCEDURE [CDN].[DetalStan_UsunFakture]
+@receiptId int
+AS
+BEGIN
+SET NOCOUNT ON
+DELETE FROM CDN.DetalStanTraNag
+WHERE DSTrN_FAID = @receiptId
+SET NOCOUNT OFF
+END

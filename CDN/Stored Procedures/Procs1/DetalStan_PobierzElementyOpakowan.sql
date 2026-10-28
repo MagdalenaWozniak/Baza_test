@@ -1,0 +1,7 @@
+﻿CREATE PROCEDURE [CDN].[DetalStan_PobierzElementyOpakowan]
+AS
+BEGIN
+SET NOCOUNT ON
+ SELECT * FROM CDN.DetalStanOpakElem
+SET NOCOUNT OFF
+END

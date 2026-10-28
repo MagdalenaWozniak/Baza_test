@@ -1,0 +1,52 @@
+﻿CREATE TABLE [CDN].[DetalKontrahenci] (
+    [DKnt_DKntId]             INT            IDENTITY (1, 1) NOT NULL,
+    [DKnt_OptimaId]           INT            NOT NULL,
+    [DKnt_DSKntId]            INT            NOT NULL,
+    [DKnt_StanDetalID]        INT            NOT NULL,
+    [DKnt_Kod]                VARCHAR (20)   NOT NULL,
+    [DKnt_EAN]                VARCHAR (16)   NOT NULL,
+    [DKnt_Nazwa1]             NVARCHAR (50)  NOT NULL,
+    [DKnt_Nazwa2]             NVARCHAR (50)  NOT NULL,
+    [DKnt_Nazwa3]             NVARCHAR (250) NOT NULL,
+    [DKnt_Kraj]               NVARCHAR (40)  NOT NULL,
+    [DKnt_Wojewodztwo]        NVARCHAR (40)  NOT NULL,
+    [DKnt_Powiat]             NVARCHAR (40)  NOT NULL,
+    [DKnt_Gmina]              NVARCHAR (40)  NOT NULL,
+    [DKnt_Ulica]              NVARCHAR (40)  NOT NULL,
+    [DKnt_NrDomu]             NVARCHAR (10)  NOT NULL,
+    [DKnt_NrLokalu]           NVARCHAR (10)  NOT NULL,
+    [DKnt_Miasto]             NVARCHAR (40)  NOT NULL,
+    [DKnt_KodPocztowy]        VARCHAR (10)   NOT NULL,
+    [DKnt_Poczta]             NVARCHAR (40)  NOT NULL,
+    [DKnt_Adres2]             NVARCHAR (40)  NOT NULL,
+    [DKnt_NipKraj]            VARCHAR (2)    NOT NULL,
+    [DKnt_NipE]               NVARCHAR (20)  NOT NULL,
+    [DKnt_Nip]                NVARCHAR (20)  NOT NULL,
+    [DKnt_Regon]              VARCHAR (20)   NOT NULL,
+    [DKnt_Pesel]              NVARCHAR (11)  NOT NULL,
+    [DKnt_Telefon]            VARCHAR (20)   NOT NULL,
+    [DKnt_Opis]               NVARCHAR (254) NOT NULL,
+    [DKnt_OsobaOdbierajaca]   NVARCHAR (40)  NOT NULL,
+    [DKnt_StanSynchronizacji] INT            NOT NULL,
+    [DKnt_TS_Mod]             DATETIME       NOT NULL,
+    [DKnt_OpeID]              INT            NOT NULL,
+    [DKnt_AdresId]            INT            CONSTRAINT [DF_DKnt_AdresId] DEFAULT ((0)) NOT NULL,
+    [DKnt_AdresId2]           INT            CONSTRAINT [DF_DKnt_AdresId2] DEFAULT ((0)) NOT NULL,
+    [DKnt_Telefon1]           VARCHAR (20)   CONSTRAINT [DF_DKnt_Telefon1] DEFAULT ('') NOT NULL,
+    [DKnt_eMail]              VARCHAR (60)   CONSTRAINT [DF_DKnt_eMail] DEFAULT ('') NOT NULL,
+    [DKnt_URL]                VARCHAR (254)  CONSTRAINT [DF_DKnt_URL] DEFAULT ('') NOT NULL,
+    [DKnt_Fax]                VARCHAR (20)   CONSTRAINT [DF_DKnt_Fax] DEFAULT ('') NOT NULL,
+    [DKnt_Finalny]            TINYINT        CONSTRAINT [DF_DKnt_Finalny] DEFAULT ((0)) NOT NULL,
+    [DKnt_Rodzaj_Dostawca]    TINYINT        CONSTRAINT [DF_DKnt_Rodzaj_Dostawca] DEFAULT ((0)) NOT NULL,
+    [DKnt_Rodzaj_Odbiorca]    TINYINT        CONSTRAINT [DF_DKnt_Rodzaj_Odbiorca] DEFAULT ((1)) NOT NULL,
+    [DKnt_Rodzaj_Konkurencja] TINYINT        CONSTRAINT [DF_DKnt_Rodzaj_Konkurencja] DEFAULT ((0)) NOT NULL,
+    [DKnt_Rodzaj_Partner]     TINYINT        CONSTRAINT [DF_DKnt_Rodzaj_Partner] DEFAULT ((0)) NOT NULL,
+    [DKnt_Rodzaj_Potencjalny] TINYINT        CONSTRAINT [DF_DKnt_Rodzaj_Potencjalny] DEFAULT ((0)) NOT NULL,
+    CONSTRAINT [DKnt_Primary] PRIMARY KEY CLUSTERED ([DKnt_DKntId] ASC) WITH (FILLFACTOR = 100)
+);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [DKntDetal]
+    ON [CDN].[DetalKontrahenci]([DKnt_OptimaId] ASC, [DKnt_DSKntId] ASC, [DKnt_StanDetalID] ASC) WITH (FILLFACTOR = 100);
+

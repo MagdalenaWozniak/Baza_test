@@ -1,0 +1,5 @@
+﻿CREATE TABLE [CDN].[Testowa] (
+    [Test_Id] INT IDENTITY (1, 1) NOT NULL,
+    CONSTRAINT [Test_Primary] PRIMARY KEY CLUSTERED ([Test_Id] ASC) WITH (FILLFACTOR = 100)
+);
+

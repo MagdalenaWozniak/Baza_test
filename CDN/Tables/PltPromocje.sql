@@ -1,0 +1,19 @@
+﻿CREATE TABLE [CDN].[PltPromocje] (
+    [PPr_ID]      INT             IDENTITY (1, 1) NOT NULL,
+    [PPr_PrmID]   INT             NULL,
+    [PPr_PltID]   INT             NULL,
+    [PPr_Wartosc] DECIMAL (15, 4) NULL,
+    CONSTRAINT [XL_PPr_Primary] PRIMARY KEY CLUSTERED ([PPr_ID] ASC) WITH (FILLFACTOR = 80, PAD_INDEX = ON),
+    CONSTRAINT [FK_PprPrmId] FOREIGN KEY ([PPr_PrmID]) REFERENCES [CDN].[PrmKarty] ([PRM_Id]) ON DELETE CASCADE
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [PprPrmId]
+    ON [CDN].[PltPromocje]([PPr_PrmID] ASC) WITH (FILLFACTOR = 80, PAD_INDEX = ON);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [PprPlatnosc]
+    ON [CDN].[PltPromocje]([PPr_PrmID] ASC, [PPr_PltID] ASC) WITH (FILLFACTOR = 80, PAD_INDEX = ON);
+

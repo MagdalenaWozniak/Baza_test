@@ -1,0 +1,9 @@
+﻿CREATE FUNCTION CDN.UkrywajCeneDlaPozycjiDok( @TypDokumentu INT )
+  RETURNS     INT
+  AS
+  BEGIN
+   IF @TypDokumentu IN (301, 303, 304, 307, 309, 310, 311, 312, 313, 317, 318, 350)
+  RETURN 1
+KONIEC:
+ RETURN 0
+END

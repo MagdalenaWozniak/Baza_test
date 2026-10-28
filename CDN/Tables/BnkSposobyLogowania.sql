@@ -1,0 +1,15 @@
+﻿CREATE TABLE [CDN].[BnkSposobyLogowania] (
+    [BSL_BSLID]        INT           IDENTITY (1, 1) NOT NULL,
+    [BSL_BNaID]        INT           NOT NULL,
+    [BSL_OpeID]        INT           NOT NULL,
+    [BSL_TypLogowania] TINYINT       NOT NULL,
+    [BSL_Login]        NVARCHAR (32) NOT NULL,
+    CONSTRAINT [BSL_Primary] PRIMARY KEY CLUSTERED ([BSL_BSLID] ASC) WITH (FILLFACTOR = 100),
+    CONSTRAINT [FK_BSLBank] FOREIGN KEY ([BSL_BNaID]) REFERENCES [CDN].[BnkNazwy] ([BNa_BNaId]) ON DELETE CASCADE
+);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [BSLBank]
+    ON [CDN].[BnkSposobyLogowania]([BSL_BNaID] ASC, [BSL_BSLID] ASC) WITH (FILLFACTOR = 100);
+

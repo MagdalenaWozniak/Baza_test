@@ -1,0 +1,17 @@
+﻿CREATE TABLE [CDN].[KntWeryfRachHist] (
+    [KWRH_KWRHID]      INT           IDENTITY (1, 1) NOT NULL,
+    [KWRH_KntID]       INT           NOT NULL,
+    [KWRH_Nip]         NVARCHAR (20) NOT NULL,
+    [KWRH_RachunekNr]  NVARCHAR (50) NOT NULL,
+    [KWRH_Data]        DATETIME      NOT NULL,
+    [KWRH_IdOdpytania] NVARCHAR (16) NOT NULL,
+    [KWRH_Status]      INT           NOT NULL,
+    CONSTRAINT [KWRH_Primary] PRIMARY KEY CLUSTERED ([KWRH_KWRHID] ASC) WITH (FILLFACTOR = 100),
+    CONSTRAINT [FK_KWRHKNT] FOREIGN KEY ([KWRH_KntID]) REFERENCES [CDN].[Kontrahenci] ([Knt_KntId]) ON DELETE CASCADE
+);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [KWRHChron]
+    ON [CDN].[KntWeryfRachHist]([KWRH_KntID] ASC, [KWRH_RachunekNr] ASC, [KWRH_Nip] ASC, [KWRH_Data] ASC) WITH (FILLFACTOR = 100);
+

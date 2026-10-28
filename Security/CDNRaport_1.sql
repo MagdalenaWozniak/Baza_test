@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [CDNRaport]
+    AUTHORIZATION [CDNRaport];
+

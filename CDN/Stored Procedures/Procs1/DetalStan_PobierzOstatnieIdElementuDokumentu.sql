@@ -1,0 +1,8 @@
+﻿CREATE PROCEDURE [CDN].[DetalStan_PobierzOstatnieIdElementuDokumentu]
+@DocId int
+AS
+BEGIN
+SET NOCOUNT ON
+SELECT ISNULL(MAX(DSTrE_DSTrEID),0) FROM CDN.DetalStanTraElem WHERE DSTrE_DSTrNId = @DocId
+SET NOCOUNT OFF
+END

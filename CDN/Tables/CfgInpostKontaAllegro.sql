@@ -1,0 +1,8 @@
+﻿CREATE TABLE [CDN].[CfgInpostKontaAllegro] (
+    [CIKA_CIKAID]   INT           IDENTITY (1, 1) NOT NULL,
+    [CIKA_Login]    NVARCHAR (40) NOT NULL,
+    [CIKA_UserId]   NVARCHAR (40) NOT NULL,
+    [CIKA_Domyslne] TINYINT       NOT NULL,
+    CONSTRAINT [CIKA_Primary] PRIMARY KEY CLUSTERED ([CIKA_CIKAID] ASC) WITH (FILLFACTOR = 100)
+);
+

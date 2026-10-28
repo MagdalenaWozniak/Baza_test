@@ -1,0 +1,21 @@
+﻿CREATE TABLE [CDN].[SerieKalPozGodz] (
+    [SKP_SkpId]     INT      IDENTITY (1, 1) NOT NULL,
+    [SKP_SlpId]     INT      NOT NULL,
+    [SKP_Lp]        INT      NOT NULL,
+    [SKP_OdGodziny] DATETIME NULL,
+    [SKP_DoGodziny] DATETIME NULL,
+    [SKP_Strefa]    INT      NOT NULL,
+    CONSTRAINT [SKP_Primary] PRIMARY KEY CLUSTERED ([SKP_SkpId] ASC) WITH (FILLFACTOR = 100),
+    CONSTRAINT [FK_SKPSlpLink] FOREIGN KEY ([SKP_SlpId]) REFERENCES [CDN].[SerieKalPoz] ([SLP_SlpId]) ON DELETE CASCADE
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [SKPLp]
+    ON [CDN].[SerieKalPozGodz]([SKP_Lp] ASC) WITH (FILLFACTOR = 100);
+
+
+GO
+CREATE NONCLUSTERED INDEX [SKPSlpLink]
+    ON [CDN].[SerieKalPozGodz]([SKP_SlpId] ASC) WITH (FILLFACTOR = 100);
+

@@ -1,0 +1,8 @@
+﻿CREATE  FUNCTION CDN.TrnRazemBruttoWal (@TrNId INT)
+RETURNS DECIMAL(15,2)
+AS
+BEGIN
+ DECLARE @Wynik DECIMAL(15,2)
+ SELECT @Wynik = IsNull(SUM(TrV_NettoWal+TrV_VATWal), 0) FROM CDN.TraVat  WHERE TrV_TrNId = @TrNId
+ RETURN @Wynik
+END

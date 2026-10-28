@@ -1,0 +1,9 @@
+﻿CREATE PROCEDURE [CDN].[DetalStan_PobierzPelnyNrDokumentu]
+@Id int
+AS
+BEGIN
+SET NOCOUNT ON
+SELECT DSTrN_NumerPelny FROM CDN.DetalStanTraNag
+ WHERE DSTrN_DSTrNID = @Id
+SET NOCOUNT OFF
+END

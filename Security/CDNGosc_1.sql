@@ -1,0 +1,7 @@
+﻿CREATE LOGIN [CDNGosc]
+    WITH PASSWORD = N'lv^ph{w1O`uqa,g pm s|dmhmsFT7_&#$!~<wtbue{ieuy6|', SID = 0x22F678842ADDD31197AA00A0D2F05EAF;
+
+
+GO
+ALTER LOGIN [CDNGosc] DISABLE;
+

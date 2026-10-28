@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [CDNGosc]
+    AUTHORIZATION [CDNGosc];
+

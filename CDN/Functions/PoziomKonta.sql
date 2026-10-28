@@ -1,0 +1,14 @@
+﻿CREATE FUNCTION CDN.PoziomKonta (@AccId INT)
+RETURNS SMALLINT
+AS
+BEGIN
+ DECLARE @Wynik   SMALLINT
+ SET @Wynik   = 0
+ WHILE @AccId IS NOT NULL
+  BEGIN
+   IF NOT EXISTS (SELECT * FROM CDN.Konta WHERE Acc_AccId = @AccId) BREAK
+   SELECT @AccId = Acc_ParId FROM CDN.Konta WHERE Acc_AccId = @AccId
+   SET @Wynik = @Wynik + 1
+  END
+ RETURN @Wynik
+END

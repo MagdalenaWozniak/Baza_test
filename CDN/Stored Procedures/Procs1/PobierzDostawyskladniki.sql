@@ -1,0 +1,60 @@
+﻿CREATE PROCEDURE  [CDN].[PobierzDostawyskladniki]  @PdEOrgId INT
+AS
+BEGIN
+    SELECT TsD_TsDID
+      ,TsD_TrSID
+      ,TsD_TrEId
+   ,TsD_PdEId
+      ,TsD_TrSIdDost
+      ,TsD_ZwrId
+      ,TsD_NumerPelny
+      ,TsD_NumerObcy
+      ,TsD_DataOpe
+      ,TsD_Dostawca
+      ,TsD_Ilosc
+      ,TsD_IloscDostepna
+      ,TsD_Wartosc
+      ,TsD_Cecha1_DeAId
+      ,TsD_Cecha1_Format
+      ,TsD_Cecha1_Kod
+      ,TsD_Cecha1_Wartosc
+      ,TsD_Cecha2_DeAId
+      ,TsD_Cecha2_Format
+      ,TsD_Cecha2_Kod
+      ,TsD_Cecha2_Wartosc
+      ,TsD_Cecha3_DeAId
+      ,TsD_Cecha3_Format
+      ,TsD_Cecha3_Kod
+      ,TsD_Cecha3_Wartosc
+      ,TsD_Cecha4_DeAId
+      ,TsD_Cecha4_Format
+      ,TsD_Cecha4_Kod
+      ,TsD_Cecha4_Wartosc
+      ,TsD_Cecha5_DeAId
+      ,TsD_Cecha5_Format
+      ,TsD_Cecha5_Kod
+      ,TsD_Cecha5_Wartosc
+      ,TsD_Cecha6_DeAId
+      ,TsD_Cecha6_Format
+      ,TsD_Cecha6_Kod
+      ,TsD_Cecha6_Wartosc
+      ,TsD_Cecha7_DeAId
+      ,TsD_Cecha7_Format
+      ,TsD_Cecha7_Kod
+      ,TsD_Cecha7_Wartosc
+      ,TsD_Cecha8_DeAId
+      ,TsD_Cecha8_Format
+      ,TsD_Cecha8_Kod
+      ,TsD_Cecha8_Wartosc
+      ,TsD_Cecha9_DeAId
+      ,TsD_Cecha9_Format
+      ,TsD_Cecha9_Kod
+      ,TsD_Cecha9_Wartosc
+      ,TsD_Cecha10_DeAId
+      ,TsD_Cecha10_Format
+      ,TsD_Cecha10_Kod
+      ,TsD_Cecha10_Wartosc
+      ,round(TsD_Ilosc*(PdE_JMPrzelicznikL/PdE_JMPrzelicznikM),4) AS TsD_IloscOrg FROM CDN.TraSElemDost
+    JOIN CDN.ProdElem ON PdE_PdEId = TsD_PdEID
+    WHERE TsD_PdEID=@PdEOrgId order by TsD_DataOpe,Tsd_TrsIdDost
+END

@@ -1,0 +1,2 @@
+﻿CREATE USER [CDNBackup] FOR LOGIN [CDNBackup];
+

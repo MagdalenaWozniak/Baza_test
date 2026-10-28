@@ -1,0 +1,16 @@
+﻿CREATE TABLE [CDN].[DetalStanTwrEan] (
+    [DSTwE_DSTwEId]  INT            IDENTITY (1, 1) NOT NULL,
+    [DSTwE_DSTwrId]  INT            NOT NULL,
+    [DSTwE_EAN]      VARCHAR (40)   NOT NULL,
+    [DSTwE_Opis]     NVARCHAR (100) NOT NULL,
+    [DSTwE_Domyslny] TINYINT        NOT NULL,
+    [DSTwE_JM]       NVARCHAR (20)  NOT NULL,
+    CONSTRAINT [DSTwE_Primary] PRIMARY KEY CLUSTERED ([DSTwE_DSTwEId] ASC) WITH (FILLFACTOR = 100),
+    CONSTRAINT [FK_DSTwE_DSTwrId] FOREIGN KEY ([DSTwE_DSTwrId]) REFERENCES [CDN].[DetalStanTowary] ([DSTwr_DSTwrId])
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IDX_DSTwE_DSTwrId]
+    ON [CDN].[DetalStanTwrEan]([DSTwE_DSTwrId] ASC) WITH (FILLFACTOR = 100);
+

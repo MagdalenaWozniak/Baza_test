@@ -1,0 +1,13 @@
+﻿CREATE TABLE [CDN].[MagazynZakazy] (
+    [MaZ_MaZId] INT IDENTITY (1, 1) NOT NULL,
+    [MaZ_MagId] INT NOT NULL,
+    [MaZ_OpeId] INT NOT NULL,
+    CONSTRAINT [MaZ_Primary] PRIMARY KEY CLUSTERED ([MaZ_MaZId] ASC) WITH (FILLFACTOR = 100),
+    CONSTRAINT [FK_MaZMagazyn] FOREIGN KEY ([MaZ_MagId]) REFERENCES [CDN].[Magazyny] ([Mag_MagId]) ON DELETE CASCADE
+);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [MaZMagazyn]
+    ON [CDN].[MagazynZakazy]([MaZ_MagId] ASC, [MaZ_OpeId] ASC) WITH (FILLFACTOR = 100);
+

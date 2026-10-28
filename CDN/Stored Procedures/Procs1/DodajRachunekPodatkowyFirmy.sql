@@ -1,0 +1,8 @@
+﻿CREATE PROCEDURE CDN.DodajRachunekPodatkowyFirmy
+@UrzID INT
+AS
+BEGIN
+ ALTER TABLE cdn.UrzRachunki DISABLE TRIGGER ALL
+ INSERT INTO cdn.UrzRachunki (URa_UrzID, URa_Lp, URa_BNaID, URa_IBAN, URa_RachunekNr, URa_PraID) VALUES(@UrzID, -1, NULL, 1, '', NULL)
+ ALTER TABLE cdn.UrzRachunki ENABLE TRIGGER ALL
+END

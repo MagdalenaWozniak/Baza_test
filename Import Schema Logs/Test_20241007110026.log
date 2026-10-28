@@ -1,0 +1,85 @@
+2024-10-07 13:00:26	This log contains information about the import schema operation into project 'Test' on computer 'SRV1' by user 'magdaw'.
+2024-10-07 13:00:28	Import of database schema has started.
+2024-10-07 13:00:43	Gathering database credentials
+2024-10-07 13:00:43	Gathering database options
+2024-10-07 13:00:43	Gathering generic database scoped configuration option
+2024-10-07 13:00:43	Gathering users
+2024-10-07 13:00:43	Gathering roles
+2024-10-07 13:00:43	Gathering application roles
+2024-10-07 13:00:43	Gathering role memberships
+2024-10-07 13:00:43	Gathering filegroups
+2024-10-07 13:00:43	Gathering full-text catalogs
+2024-10-07 13:00:43	Gathering assemblies
+2024-10-07 13:00:43	Gathering certificates
+2024-10-07 13:00:43	Gathering asymmetric keys
+2024-10-07 13:00:43	Gathering symmetric keys
+2024-10-07 13:00:43	Gathering encrypted symmetric keys
+2024-10-07 13:00:43	Gathering schemas
+2024-10-07 13:00:43	Gathering XML schema collections
+2024-10-07 13:00:43	Gathering user-defined data types
+2024-10-07 13:00:43	Gathering user-defined types
+2024-10-07 13:00:43	Gathering table types
+2024-10-07 13:00:43	Gathering unique keys for table types
+2024-10-07 13:00:43	Gathering primary keys for table types
+2024-10-07 13:00:43	Gathering indexes for table types
+2024-10-07 13:00:43	Gathering check constraints for table types
+2024-10-07 13:00:43	Gathering default constraints for table types
+2024-10-07 13:00:43	Gathering partition functions
+2024-10-07 13:00:43	Gathering partition schemes
+2024-10-07 13:00:43	Gathering functions
+2024-10-07 13:00:47	Gathering encrypted functions
+2024-10-07 13:00:47	Gathering aggregates
+2024-10-07 13:00:47	Gathering procedures
+2024-10-07 13:00:58	Gathering encrypted procedures
+2024-10-07 13:00:58	Gathering tables
+2024-10-07 13:01:07	Gathering primary keys
+2024-10-07 13:01:07	Gathering unique constraints
+2024-10-07 13:01:07	Gathering foreign keys
+2024-10-07 13:01:08	Gathering default constraints
+2024-10-07 13:01:10	Gathering check constraints
+2024-10-07 13:01:10	Gathering views
+2024-10-07 13:01:10	Gathering encrypted views
+2024-10-07 13:01:10	Gathering indexes
+2024-10-07 13:01:12	Gathering statistics
+2024-10-07 13:01:12	Gathering full-text index stoplists
+2024-10-07 13:01:12	Gathering search property lists
+2024-10-07 13:01:12	Gathering search properties
+2024-10-07 13:01:12	Gathering full-text indexes
+2024-10-07 13:01:12	Gathering column store indexes
+2024-10-07 13:01:12	Gathering spatial indexes
+2024-10-07 13:01:12	Gathering XML indexes
+2024-10-07 13:01:12	Gathering Selective XML indexes
+2024-10-07 13:01:12	Gathering encrypted triggers
+2024-10-07 13:01:12	Gathering triggers
+2024-10-07 13:01:15	Gathering encrypted and clr ddl triggers
+2024-10-07 13:01:15	Gathering ddl triggers
+2024-10-07 13:01:16	Gathering synonyms
+2024-10-07 13:01:16	Gathering defaults
+2024-10-07 13:01:16	Gathering data constraint uddt bindings
+2024-10-07 13:01:16	Gathering rules
+2024-10-07 13:01:16	Gathering data constraint uddt bindings
+2024-10-07 13:01:16	Gathering message types
+2024-10-07 13:01:16	Gathering queues
+2024-10-07 13:01:16	Gathering contracts
+2024-10-07 13:01:16	Gathering services
+2024-10-07 13:01:16	Gathering event notifications
+2024-10-07 13:01:16	Gathering remote service bindings
+2024-10-07 13:01:16	Gathering broker priorities
+2024-10-07 13:01:16	Gathering signatures
+2024-10-07 13:01:17	Gathering data compression options
+2024-10-07 13:01:17	Gathering sequence types
+2024-10-07 13:01:17	Gathering security policies
+2024-10-07 13:01:17	Gather column encryption keys
+2024-10-07 13:01:17	Gathering column master keys
+2024-10-07 13:01:17	Gathering external data sources
+2024-10-07 13:01:17	Gathering external file formats
+2024-10-07 13:01:17	Gathering external tables
+2024-10-07 13:01:17	Gathering extended properties
+2024-10-07 13:01:18	Gathering credentials
+2024-10-07 13:01:18	Gathering logins
+2024-10-07 13:01:18	Gathering server audits
+2024-10-07 13:01:37	Scanning project for duplicate elements
+2024-10-07 13:01:50	Finished duplicate element processing
+2024-10-07 13:08:31	Finished importing database.
+2024-10-07 13:08:31	A summary of the import was saved to the following location: C:\Users\magdaw\source\repos\Test\Import Schema Logs\Test_20241007110026.log
+2024-10-07 13:08:31	Click Finish to continue...

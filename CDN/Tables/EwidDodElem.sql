@@ -1,0 +1,24 @@
+﻿CREATE TABLE [CDN].[EwidDodElem] (
+    [EDE_EDEID]      INT             IDENTITY (1, 1) NOT NULL,
+    [EDE_EDNID]      INT             NOT NULL,
+    [EDE_KatID]      INT             NULL,
+    [EDE_Kwota]      DECIMAL (15, 2) NOT NULL,
+    [EDE_KolumnaKPR] TINYINT         NOT NULL,
+    [EDE_KolumnaRYC] TINYINT         NOT NULL,
+    [EDE_KontoWn]    VARCHAR (50)    NULL,
+    [EDE_KontoMa]    VARCHAR (50)    NULL,
+    CONSTRAINT [EDE_Primary] PRIMARY KEY CLUSTERED ([EDE_EDEID] ASC) WITH (FILLFACTOR = 100),
+    CONSTRAINT [FK_EDEKategoria] FOREIGN KEY ([EDE_KatID]) REFERENCES [CDN].[Kategorie] ([Kat_KatID]),
+    CONSTRAINT [FK_EDENaglowek] FOREIGN KEY ([EDE_EDNID]) REFERENCES [CDN].[EwidDodNag] ([EDN_EDNID]) ON DELETE CASCADE
+);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [EDENaglowek]
+    ON [CDN].[EwidDodElem]([EDE_EDNID] ASC, [EDE_EDEID] ASC) WITH (FILLFACTOR = 100);
+
+
+GO
+CREATE NONCLUSTERED INDEX [EDEKategoria]
+    ON [CDN].[EwidDodElem]([EDE_KatID] ASC) WITH (FILLFACTOR = 100);
+

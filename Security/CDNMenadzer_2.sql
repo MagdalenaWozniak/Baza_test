@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [CDNMenadzer]
+    AUTHORIZATION [CDNMenadzer];
+

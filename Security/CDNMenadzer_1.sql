@@ -1,0 +1,7 @@
+﻿CREATE LOGIN [CDNMenadzer]
+    WITH PASSWORD = N'lvh{wr2qaygpms|dmh4wtte{msFT7_&#$!~<{ieI%Tuy|gtf', SID = 0x37E7DF1EFD9F69419580E400EF21CE44;
+
+
+GO
+ALTER LOGIN [CDNMenadzer] DISABLE;
+

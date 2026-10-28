@@ -1,0 +1,7 @@
+﻿CREATE TABLE [CDN].[ZasobyJezykowe] (
+    [ZJE_Id]        NVARCHAR (448) NOT NULL,
+    [ZJE_Jezyk]     INT            CONSTRAINT [DF_ZJE_Jezyk] DEFAULT ((1045)) NOT NULL,
+    [ZJE_Komunikat] NVARCHAR (MAX) NOT NULL,
+    CONSTRAINT [ZJE_Primary] PRIMARY KEY CLUSTERED ([ZJE_Id] ASC, [ZJE_Jezyk] ASC) WITH (FILLFACTOR = 100)
+);
+

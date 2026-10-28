@@ -1,0 +1,6 @@
+﻿CREATE TABLE [CDN].[TytUmowy] (
+    [TUM_TumId] INT           IDENTITY (1, 1) NOT NULL,
+    [TUM_Nazwa] VARCHAR (254) NOT NULL,
+    CONSTRAINT [TUM_Primary] PRIMARY KEY CLUSTERED ([TUM_TumId] ASC) WITH (FILLFACTOR = 100)
+);
+

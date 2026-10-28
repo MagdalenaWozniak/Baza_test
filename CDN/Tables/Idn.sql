@@ -1,0 +1,4 @@
+﻿CREATE TABLE [CDN].[Idn] (
+    [I] INT IDENTITY (1, 1) NOT NULL
+);
+

@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [onebi]
+    WITH PASSWORD = N'pkvmgvYanittYzqhxrv$m}HlmsFT7_&#$!~<x2pnHfbju:vb', SID = 0xCDC1A7D2A75C054BA30914A43728F73E, DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

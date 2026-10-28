@@ -1,0 +1,11 @@
+﻿CREATE PROCEDURE [CDN].[DetalStan_UaktualnijStawkeVat]
+@Id int,
+@PosId int,
+@Symbol NVARCHAR(40)
+AS
+BEGIN
+SET NOCOUNT ON
+UPDATE CDN.DetalStanStawkiVAT SET DSSVAT_DFSymbol = @Symbol
+ WHERE DSSVAT_DSSVATId = @Id AND DSSVAT_StanDetalID = @PosId
+SET NOCOUNT OFF
+END

@@ -1,0 +1,15 @@
+﻿CREATE TABLE [CDN].[FormyPlatnosciDF] (
+    [FPD_FPDID] INT           IDENTITY (1, 1) NOT NULL,
+    [FPD_DFLp]  INT           NOT NULL,
+    [FPD_FPlId] INT           NOT NULL,
+    [FPD_Numer] INT           NULL,
+    [FPD_Nazwa] NVARCHAR (20) NOT NULL,
+    CONSTRAINT [FPD_Primary] PRIMARY KEY CLUSTERED ([FPD_FPDID] ASC) WITH (FILLFACTOR = 100),
+    CONSTRAINT [FK_FPDFormyPlatnosci] FOREIGN KEY ([FPD_FPlId]) REFERENCES [CDN].[FormyPlatnosci] ([FPl_FPlId]) ON DELETE CASCADE
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [FPDFormyPlatnosci]
+    ON [CDN].[FormyPlatnosciDF]([FPD_FPlId] ASC) WITH (FILLFACTOR = 100);
+
